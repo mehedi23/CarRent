@@ -1,0 +1,90 @@
+{% load static %}
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home</title>
+  <link rel="icon" href="{% static 'images/logo.svg' %}" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Viga&display=swap"
+    rel="stylesheet">
+
+  <!-- <link href="{% static 'style/bootstrap.min.css' %}" rel="stylesheet" media="screen"> -->
+  <link href="{% static 'style/bootstrap-datetimepicker.min.css' %}" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="{% static 'style/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+
+  <script type="text/javascript" src="{% static 'js/bootstrap-datetimepicker.js' %}" charset="UTF-8"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap-datetimepicker.fr.js' %}" charset="UTF-8"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="https://kit.fontawesome.com/a3f6a7d106.js" crossorigin="anonymous"></script>
+  
+  <link href="{% static 'style/style.css' %}" rel="stylesheet">
+  <link href="{% static 'style/responsive.css' %}" rel="stylesheet">
+  
+</head>
+{% block content %}{% endblock %}
+
+<footer id="footer">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-4 col-sm-4 col-12">
+        <div class="footer-card">
+          <h2> About Us</h2>
+          <p class="about-us">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut quas inventore blanditiis quibusdam
+            exercitationem quod, beatae recusandae ipsam labore nesciunt quae unde doloribus? Officia voluptatum cum,
+            odio repudiandae harum quisquam!
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4 col-12">
+        <div class="footer-card">
+          <h2> Product </h2>
+          <ul class="footer-products">
+            <li> <span> <i class="fas fa-caret-right"></i> </span> <a href="#"> Perodua Myvi </a> </li>
+            <li> <span> <i class="fas fa-caret-right"></i> </span> <a href="#"> Perodua Alza </a> </li>
+            <li> <span> <i class="fas fa-caret-right"></i> </span> <a href="#"> Perodua Axia </a> </li>
+            <li> <span> <i class="fas fa-caret-right"></i> </span> <a href="#"> Honda City </a> </li>
+            <li> <span> <i class="fas fa-caret-right"></i> </span> <a href="#"> Honda Civic </a> </li>
+            <li> <span> <i class="fas fa-caret-right"></i> </span> <a href="#"> Hyundai Sonata </a> </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4 col-12">
+        <div class="footer-card">
+          <h2> Contact Us </h2>
+          <div class="our-info">
+            <span> Whatsapp :</span> <span> +1 663-0398 </span>
+          </div>
+          <div class="our-info">
+            <span> Telephone :</span> <span> +24 973-893-8723 </span>
+          </div>
+          <div class="our-info">
+            <span> Email :</span> <span> carrents@help.com </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="copy-right"> Copyright © 2017-2018 VaidTech - All Rights Reserved. </p>
+  </div>
+</footer>
+
+</body>
+
+</html>

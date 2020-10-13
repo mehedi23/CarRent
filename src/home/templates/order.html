@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- ##### header start ##### -->
+<div class="order-page-header">
+    <div class="container">
+        <!-- navbar -->
+        <div class="navbar-area f-c-sb">
+
+            <div class="logo">
+                <a href="/"> <img src="{% static 'images/logo.svg' %}" alt="logo"> </a>
+            </div>
+            <div class="navbar ">
+                <ul>
+                    <li> <span></span> <a href="/">Home</a> </li>
+                    <li> <span></span> <a href="/#small-car">Cars</a> </li>
+                    <li> <span></span> <a href="/#offers-car">Special Offer</a> </li>
+                    <li> <span></span> <a href="/#carDealer">Car Dealer</a> </li>
+                    <li> <span></span> <a href="/#footer">Contact Us</a> </li>
+                </ul>
+            </div>
+            <div class="menu-icon">
+                <span class="mobile-nav-icon"> <i class="fas fa-bars"></i> </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="order-navbar">
+            <ul>
+                <li id="car-review-show" class="order-navbar-items order-active-nav"> Car Review </li>
+                <li id="the-owner-show" class="order-navbar-items"> The Owner </li>
+            </ul>
+        </div>
+
+        <div class="car-and-the-owner">
+            <div class="car-review">
+                <div class="car-review-body">
+                    <div class="order-img animate__animated animate__fadeInLeft">
+                        <img src=" {% if car.image %} {{ car.image.url }} {% else %} {% static 'images/no-car-pic.jpg' %} {% endif %} " alt="">
+                    </div>
+                    <div class="get-information animate__animated animate__fadeInRight">
+                        <h2> {{ car.model }} </h2>
+    
+                        <table class="f-c-sb">
+                            <tbody>
+                                <tr>
+                                    <td>Segment : </td>
+                                    <td>A-Segment</td>
+                                </tr>
+                                <tr>
+                                    <td>BodyType : </td>
+                                    <td> Hatchback </td>
+                                </tr>
+                                <tr>
+                                    <td>Transmission : </td>
+                                    <td>AT / MT</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td> Capacity : </td>
+                                    <td>1.0L</td>
+                                </tr>
+                                <tr>
+                                    <td>Horsepower : </td>
+                                    <td>68 - 69PS</td>
+                                </tr>
+                                <tr>
+                                    <td>Seats : </td>
+                                    <td>5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <p class="order-rm"> RM : {{car.per_hour}}/HOUR </p>
+                        <p class="order-rm"> RM : {{car.per_day}}/DAY </p>
+    
+                        <div class="f-c-sb order-social-info">
+                            <div class="likes-buy-info">
+                                <div class="infos">
+                                    <span><i class="fas fa-user-alt"></i></span>
+                                    <span> 12 </span>
+                                </div>
+                                <div class="infos">
+                                    <span><i class="fas fa-car"></i></span>
+                                    <span> Auto </span>
+                                </div>
+                                <div class="infos">
+                                    <span><i class="far fa-sun"></i></span>
+                                    <span> A/C </span>
+                                </div>
+                                <div class="infos">
+                                    <span><i class="fas fa-thumbs-up"></i></i></span>
+                                    <span> 12 </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="the-owner tabs-hide">
+                <div class="car-review-body">
+    
+                    <div class="order-img">
+                        <img src=" {{car.owner.image.url}} " alt="{{car.owner.name}}">
+                    </div>
+                    <div class="get-information">
+                        <h2> {{car.owner.name}} </h2>
+    
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Location : </td>
+                                    <td>{{car.owner.address}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Whatsapp : </td>
+                                    <td> {{car.owner.whatsAppN}} </td>
+                                </tr>
+                                <tr>
+                                    <td>Telephone : </td>
+                                    <td>{{car.owner.number}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email : </td>
+                                    <td>{{car.owner.email}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="note-info">
+                            <span> Notes : </span>
+                            <div class="note-lists">
+                                <ol>
+                                    <li> Cheapest new car to offer AEB (ASA 2.0) and stability control </li>
+                                    <li> Fuel efficient engine </li>
+                                    <li> Small size, easy to park </li>
+                                </ol>
+                            </div>
+                        </div>
+    
+                        <a class="owner-contact" href="#"> Contact </a>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+{% if OfferCar %}
+
+<section id="suggest-car">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                Suggest For You
+            </h2>
+        </div>
+
+        <div class="suggest-car-slider owl-carousel">
+
+            {% for obj in OfferCar|slice:"2:10" %}
+            <div class="latest-car-card-body">
+                <h2> {{ obj.model }} </h2>
+                <div class="latest-car-img">
+                    <img src="{% if obj.image %} {{ obj.image.url }} {% else %} {% static 'images/no-car-pic.jpg' %} {% endif %}" alt="car-img">
+                </div>
+                <div class="f-c-sb">
+                    <div class="likes-buy-info">
+                        <div class="infos">
+                            <span><i class="fas fa-user-alt"></i></span>
+                            <span> 12 </span>
+                        </div>
+                        <div class="infos">
+                            <span><i class="fas fa-car"></i></span>
+                            <span> Auto </span>
+                        </div>
+                        <div class="infos">
+                            <span><i class="far fa-sun"></i></span>
+                            <span> A/C </span>
+                        </div>
+                        <div class="infos">
+                            <span><i class="fas fa-thumbs-up"></i></i></span>
+                            <span> 12 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="latest-car-rm">
+                    <p> RM <span> {{ obj.per_hour }}/Hour </span> <span class="new-rm"> {{ obj.SpacialDiscount }}/Hour </span> </p>
+                    <p> RM <span> 22/Day </span> <span class="new-rm"> 3/Day </span> </p>
+                </div>
+                <a class="order-btn" href="/car/{{obj.id}}"> Order </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+{% endif %}
+
+
+<!-- ##### header start ##### -->
+
+{% endblock %}

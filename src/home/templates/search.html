@@ -1,0 +1,17 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% load static %}
+{% for obj in SearchResult %}
+<div class="search-product">
+  <div class="search-car-img">
+    <img src="{% if obj.image %} {{ obj.image.url }} {% else %} {% static 'images/no-car-pic.jpg' %} {% endif %}" id="car-id-name" />
+  </div>
+  <div class="search-car-name-rm">
+    <h2> Perodua Myvi </h2>
+    <p class="search-result-rm">Rm {{obj.per_hour}}/Hour</p>
+    <p class="search-result-rm">Rm {{obj.per_day}}/Day</p>
+  </div>
+  <a class="search-order-btn" href="/car/{{obj.id}}"> Order Now </a>
+</div>
+{% empty %}
+<h2 class="empty-results" > This Car Is Not Available Right Now !!! !! ! </h2>
+{% endfor %}
